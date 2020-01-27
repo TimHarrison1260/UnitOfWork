@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Core.Domain.Model.MemberProfile">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAACAEAAAAAAAAAAAAAEAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Model\MemberProfile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Domain.Model.ScanResult">
+    <Position X="6" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAEAAAQAAAAAIAABBQAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Model\ScanResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Domain.Model.Settings">
+    <Position X="0.5" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAQAAAABACABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Model\Settings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Domain.Model.ArchiveTestResult">
+    <Position X="4.5" Y="7.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAEACBAAACAAAAAEAAAAACAAAAACAAACAAAAAA=</HashCode>
+      <FileName>Domain\Model\ArchiveTestResult.cs</FileName>
+      <NewMemberFileName>Domain\Model\TestResult.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Domain.Model.WebSite">
+    <Position X="3.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAIACkAAAAAAAAAAAAAAQBAACQAAAAAAAAA=</HashCode>
+      <FileName>Domain\Model\WebSite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Domain.Model.TestResult">
+    <Position X="8.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAEACBAAACAAAAAEAAAAACAAAAACAAACAAAAAA=</HashCode>
+      <FileName>Domain\Model\TestResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Domain.Model.ArchiveScanResult">
+    <Position X="2.5" Y="7" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAEAAAQAAAAAIAABBQAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Model\ArchiveScanResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core.Domain.Model.ArchiveDetail">
+    <Position X="0.5" Y="6.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAAAAAAAAAAAQAAAAAAAAAAAACARAAIAAA=</HashCode>
+      <FileName>Domain\Model\ArchiveDetail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Core.Domain.Model.FrequencyEnum">
+    <Position X="0.5" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgACABAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain\Model\FrequencyEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Core.Domain.Model.SiteTypeEnum">
+    <Position X="3.25" Y="4.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAAAAAACAAAAAABAgA=</HashCode>
+      <FileName>Domain\Model\SiteTypeEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Core.Domain.Model.StatusEnum">
+    <Position X="6" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAABAAAAAAAACAAAAAAAAAABA=</HashCode>
+      <FileName>Domain\Model\StatusEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Core.Domain.Model.TestTypeEnum">
+    <Position X="8.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQIAAAAAAAAAAAAAABAAAAAAAAAAAAQAABgAAEAAEAA=</HashCode>
+      <FileName>Domain\Model\TestTypeEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
