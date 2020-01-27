@@ -41,7 +41,7 @@ namespace Infrastructure.Factories
         public virtual TRepository Create<TRepository>() where TRepository : class, new()
         {
             //  https://social.msdn.microsoft.com/forums/en-US/8ef58e3b-cb34-4d28-ba41-c683c64a031d/instantiating-a-generic-object-without-a-default-constructor
-
+            //  Call the CreateInstance, non-generic, to control which constructor is used.  Here, the DbContext must be passed.
             var repositoryInstance = (TRepository) Activator.CreateInstance(typeof(TRepository), _context);
 
             return repositoryInstance ?? throw new ArgumentException($"Type of repository {typeof(TRepository)} is undefined");

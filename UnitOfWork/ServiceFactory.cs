@@ -9,10 +9,18 @@ using Ninject.Modules;
 
 namespace UnitOfWork
 {
+    /// <summary>
+    /// Class <c>ServiceFactory</c> is responsible for instantiating
+    /// the SiteMonitorService in the test application
+    /// </summary>
     public class ServiceFactory
     {
         private readonly StandardKernel _kernel;
 
+        /// <summary>
+        /// ctor: accepts the IoC Kernel instance => Ninject
+        /// </summary>
+        /// <param name="kernel">Ninject Kernel instance</param>
         public ServiceFactory(StandardKernel kernel)
         {
             _kernel = kernel ?? throw new ArgumentNullException(nameof(kernel));
@@ -21,7 +29,7 @@ namespace UnitOfWork
         /// <summary>
         /// Create instance of SiteMonitorService
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Instance of SiteMonitorService</returns>
         public ISiteMonitorService Create()
         {
             var context = new SiteMonitorDbDataContext();
@@ -35,7 +43,7 @@ namespace UnitOfWork
         /// Create instance of SiteMonitorService from IoC
         /// </summary>
         /// <param name="useIoc">True create from Ioc, otherwise create</param>
-        /// <returns></returns>
+        /// <returns>Instance of SiteMonitorService</returns>
         public ISiteMonitorService Create(bool useIoc)
         {
             return !useIoc ? Create() : _kernel.Get<SiteMonitorService>();
