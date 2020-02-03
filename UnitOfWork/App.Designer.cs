@@ -61,11 +61,29 @@ namespace UnitOfWork {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} Return code: {1}.
+        /// </summary>
+        internal static string CallReturnCode {
+            get {
+                return ResourceManager.GetString("CallReturnCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The call to GetAll() returned: {0}.
         /// </summary>
         internal static string CallToGetAllReturned {
             get {
                 return ResourceManager.GetString("CallToGetAllReturned", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Q: Quit application.
+        /// </summary>
+        internal static string Enter_Q_to_quit {
+            get {
+                return ResourceManager.GetString("Enter_Q_to_quit", resourceCulture);
             }
         }
         
@@ -79,11 +97,65 @@ namespace UnitOfWork {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Press ENTER to terminate app..
+        ///   Looks up a localized string similar to Press ENTER to continue.
         /// </summary>
         internal static string EnterToTerminate {
             get {
                 return ResourceManager.GetString("EnterToTerminate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1: Basic BeginTransaction.
+        /// </summary>
+        internal static string Menu_Option_1 {
+            get {
+                return ResourceManager.GetString("Menu_Option_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2: Intermediate (Settings) BeginTransaction.
+        /// </summary>
+        internal static string Menu_Option_2 {
+            get {
+                return ResourceManager.GetString("Menu_Option_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 3: Full (Archive) BeginTransaction.
+        /// </summary>
+        internal static string Menu_Option_3 {
+            get {
+                return ResourceManager.GetString("Menu_Option_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select option: .
+        /// </summary>
+        internal static string Menu_Select_option {
+            get {
+                return ResourceManager.GetString("Menu_Select_option", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Design Patterns: Unit Of Work, Testing application.
+        /// </summary>
+        internal static string ProgramTitle {
+            get {
+                return ResourceManager.GetString("ProgramTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to --------------------------------------------------.
+        /// </summary>
+        internal static string ProgramUnderline {
+            get {
+                return ResourceManager.GetString("ProgramUnderline", resourceCulture);
             }
         }
     }

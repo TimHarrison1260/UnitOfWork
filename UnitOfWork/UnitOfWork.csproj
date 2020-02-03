@@ -60,10 +60,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>App.resx</DependentUpon>
     </Compile>
+    <Compile Include="BasicTransaction.cs" />
     <Compile Include="IoC.cs" />
+    <Compile Include="SettingsServiceFactory.cs" />
+    <Compile Include="MemberServiceFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceFactory.cs" />
+    <Compile Include="ArchiveServiceFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

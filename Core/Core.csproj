@@ -44,6 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\Mappers\Mapper.cs" />
+    <Compile Include="Domain\Mappers\MapScanResultToArchiveScanResult.cs" />
+    <Compile Include="Domain\Mappers\MapTestResultToArchiveTestResult.cs" />
     <Compile Include="Domain\Model\ArchiveDetail.cs" />
     <Compile Include="Domain\Model\ArchiveTestResult.cs" />
     <Compile Include="Domain\Model\ArchiveScanResult.cs" />
@@ -56,6 +59,12 @@
     <Compile Include="Domain\Model\StatusEnum.cs" />
     <Compile Include="Domain\Model\TestTypeEnum.cs" />
     <Compile Include="Domain\Model\WebSite.cs" />
+    <Compile Include="Domain\Services\SiteMonitorArchiveService.cs" />
+    <Compile Include="Interfaces\Mappers\IMapper.cs" />
+    <Compile Include="Interfaces\Services\IMemberService.cs" />
+    <Compile Include="Interfaces\Services\ISettingsService.cs" />
+    <Compile Include="Interfaces\Services\ISiteMonitorArchiveService.cs" />
+    <Compile Include="Interfaces\Services\ISiteMonitorService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

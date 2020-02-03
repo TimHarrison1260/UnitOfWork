@@ -1,19 +1,18 @@
 ﻿using System;
+using Core.Domain.Mappers;
+using Core.Domain.Model;
+using Core.Domain.Services;
+using Core.Interfaces.Mappers;
+using Core.Interfaces.Services;
 using Infrastructure.Data;
 using Infrastructure.Factories;
 using Infrastructure.Interfaces.Factories;
-using Infrastructure.Interfaces.Services;
 using Infrastructure.Services;
 using Ninject;
-using Ninject.Modules;
 
 namespace UnitOfWork
 {
-    /// <summary>
-    /// Class <c>ServiceFactory</c> is responsible for instantiating
-    /// the SiteMonitorService in the test application
-    /// </summary>
-    public class ServiceFactory
+    public class MemberServiceFactory
     {
         private readonly StandardKernel _kernel;
 
@@ -21,7 +20,7 @@ namespace UnitOfWork
         /// ctor: accepts the IoC Kernel instance => Ninject
         /// </summary>
         /// <param name="kernel">Ninject Kernel instance</param>
-        public ServiceFactory(StandardKernel kernel)
+        public MemberServiceFactory(StandardKernel kernel)
         {
             _kernel = kernel ?? throw new ArgumentNullException(nameof(kernel));
         }
@@ -30,13 +29,18 @@ namespace UnitOfWork
         /// Create instance of SiteMonitorService
         /// </summary>
         /// <returns>Instance of SiteMonitorService</returns>
-        public ISiteMonitorService Create()
+        public IMemberService Create()
         {
+            //  Infrastructure;
+            // :EF DbContext
             var context = new SiteMonitorDbDataContext();
-            var repositoryFactory = new SiteMonitorRepositoryFactory(context);
+            //  Infrastructure: RepositoryFactory
+            IRepositoryFactory<SiteMonitorDbDataContext> repositoryFactory = new SiteMonitorRepositoryFactory(context);
 
-            //  Unit of Work pattern
-            return new SiteMonitorService(context, repositoryFactory); 
+            //  Unit of Work
+            IMemberService memberService = new MemberService(context, repositoryFactory);
+
+            return memberService; 
         }
 
         /// <summary>
@@ -44,9 +48,10 @@ namespace UnitOfWork
         /// </summary>
         /// <param name="useIoc">True create from Ioc, otherwise create</param>
         /// <returns>Instance of SiteMonitorService</returns>
-        public ISiteMonitorService Create(bool useIoc)
+        public IMemberService Create(bool useIoc)
         {
-            return !useIoc ? Create() : _kernel.Get<SiteMonitorService>();
+            return !useIoc ? Create() : _kernel.Get<IMemberService>();
         }
     }
+        
 }

@@ -117,37 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="EnterToStart" xml:space="preserve">
-    <value>Press ENTER to start app.</value>
+  <data name="Target" xml:space="preserve">
+    <value>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</value>
   </data>
-  <data name="CallToGetAllReturned" xml:space="preserve">
-    <value>The call to GetAll() returned: {0}</value>
-  </data>
-  <data name="EnterToTerminate" xml:space="preserve">
-    <value>Press ENTER to continue</value>
-  </data>
-  <data name="CallReturnCode" xml:space="preserve">
-    <value>{0} Return code: {1}</value>
-  </data>
-  <data name="Enter_Q_to_quit" xml:space="preserve">
-    <value>Q: Quit application</value>
-  </data>
-  <data name="Menu_Select_option" xml:space="preserve">
-    <value>Select option: </value>
-  </data>
-  <data name="Menu_Option_1" xml:space="preserve">
-    <value>1: Basic BeginTransaction</value>
-  </data>
-  <data name="Menu_Option_2" xml:space="preserve">
-    <value>2: Intermediate (Settings) BeginTransaction</value>
-  </data>
-  <data name="Menu_Option_3" xml:space="preserve">
-    <value>3: Full (Archive) BeginTransaction</value>
-  </data>
-  <data name="ProgramTitle" xml:space="preserve">
-    <value>Design Patterns: Unit Of Work, Testing application</value>
-  </data>
-  <data name="ProgramUnderline" xml:space="preserve">
-    <value>--------------------------------------------------</value>
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>dbo</value>
   </data>
 </root>

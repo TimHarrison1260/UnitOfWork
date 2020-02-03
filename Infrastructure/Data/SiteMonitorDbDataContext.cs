@@ -32,7 +32,15 @@ namespace Infrastructure.Data
 
         }
 
+        public DbSet<MemberProfile> MemberProfiles { get; set; }
+
+        public DbSet<Settings> MonitorSettings { get; set; } 
+
         public DbSet<WebSite> WebSites { get; set; }
 
+        public DbSet<ScanResult> ScanResults { get; set; }
+
+        //  Update: ArchiveScanResults: Next Line
+        public DbSet<ArchiveScanResult> ArchiveScanResults { get; set; }
     }
 }

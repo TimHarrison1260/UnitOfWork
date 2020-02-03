@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 
 namespace Infrastructure.Interfaces.Repositories
 {
@@ -22,12 +25,30 @@ namespace Infrastructure.Interfaces.Repositories
         IEnumerable<TModel> GetAll();
 
         /// <summary>
+        /// Gets all instances of the Domain Aggregate class
+        /// that match the various criteria passed.
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <param name="orderBy"></param>
+        /// <param name="includeProperties"></param>
+        /// <returns>IEnumerable collection</returns>
+        /// <remarks>
+        /// See https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application
+        /// for description of using this kind of method to ensure the sorting etc is done in the underlying database and not in memory.
+        /// </remarks>
+        IEnumerable<TModel> Get(
+            Expression<Func<TModel, bool>> filter = null,
+            Func<IQueryable<TModel>, IOrderedQueryable<TModel>> orderBy = null,
+            string includeProperties = "");
+
+
+        /// <summary>
         /// Gets an instance of the domain aggregate class defined by
         /// the Id
         /// </summary>
         /// <param name="id">Id of the aggregate to be returned</param>
         /// <returns>Instance of the aggregate with the given id</returns>
-        TModel GetById(int id);
+        TModel Get(int id);
         
         /// <summary>
         /// Creates an instance in the aggregate model passed in.
@@ -46,9 +67,15 @@ namespace Infrastructure.Interfaces.Repositories
         /// <summary>
         /// Deletes the instance of the aggregate model.
         /// </summary>
-        /// <param name="model">Aggregate being created</param>
+        /// <param name="model">Aggregate being deleted</param>
         /// <returns>Returns True if the delete was successful, otherwise False</returns>
         bool Delete(TModel model);
-        
+
+        /// <summary>
+        /// Deletes the instance of the aggregate model.
+        /// </summary>
+        /// <param name="id">Id of the Aggregate being deleted</param>
+        /// <returns>Returns True if the delete was successful, otherwise False</returns>
+        bool Delete(int id);
     }
 }

@@ -52,6 +52,11 @@ namespace Infrastructure.Data
         }
 
         /// <summary>
+        /// Allow the context to be referenced in a derived class
+        /// </summary>
+        internal DbContext Context => _context;
+
+        /// <summary>
         /// Generic method, to get the instance of the specific repository class for the Domain Aggregate, following
         /// the principle of having a repository specific to each aggregate.
         /// </summary>
@@ -126,6 +131,7 @@ namespace Infrastructure.Data
             {
                 if (disposing)
                 {
+                    _dbContextTransaction?.Dispose();
                     _context.Dispose();
                 }
             }
