@@ -6,6 +6,12 @@ namespace UnitOfWork
 {
     public class BasicTransaction
     {
+        /// <summary>
+        /// Basic test of the use of DbContext.Database.BeginTransaction()
+        /// and use of SaveChanges() within the transaction.  It interacts
+        /// directly with the DbContext.
+        /// </summary>
+        /// <returns>True if both updates are successful, otherwise False</returns>
         public bool Execute()
         {
             var context = new SiteMonitorDbDataContext();

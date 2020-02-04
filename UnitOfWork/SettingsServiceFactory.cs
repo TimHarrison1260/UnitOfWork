@@ -8,6 +8,10 @@ using Ninject;
 
 namespace UnitOfWork
 {
+    /// <summary>
+    /// Class <c>SettingsServiceFactory</c> is responsible for instantiating
+    /// the SettingsService in the test application
+    /// </summary>
     public class SettingsServiceFactory
     {
         private readonly StandardKernel _kernel;
@@ -22,9 +26,9 @@ namespace UnitOfWork
         }
 
         /// <summary>
-        /// Create instance of SiteMonitorService
+        /// Create instance of SettingsService
         /// </summary>
-        /// <returns>Instance of SiteMonitorService</returns>
+        /// <returns>Instance of SettingsService</returns>
         public ISettingsService Create()
         {
             //  Infrastructure;
@@ -40,10 +44,10 @@ namespace UnitOfWork
         }
 
         /// <summary>
-        /// Create instance of SiteMonitorService from IoC
+        /// Create instance of SettingsService from IoC
         /// </summary>
         /// <param name="useIoc">True create from Ioc, otherwise create</param>
-        /// <returns>Instance of SiteMonitorService</returns>
+        /// <returns>Instance of SettingsService</returns>
         public ISettingsService Create(bool useIoc)
         {
             return !useIoc ? Create() : _kernel.Get<ISettingsService>();

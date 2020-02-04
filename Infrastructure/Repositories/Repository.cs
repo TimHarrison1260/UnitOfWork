@@ -14,10 +14,14 @@ namespace Infrastructure.Repositories
     /// </summary>
     /// <typeparam name="TModel">Aggregate Model being accessed by the repository</typeparam>
     /// <typeparam name="TEntity"><see cref="DbContext"/> containing the aggregate model</typeparam>
+    /// <remarks>
+    /// The methods are all overridable, but have default implementations, designed for use with
+    /// single TModel's.  Complex TModels would required methods to be overridden.
+    /// </remarks>
     public abstract class Repository<TModel, TEntity> : IRepository<TModel> where TModel: class, new() where TEntity: DbContext
     {
         private readonly DbContext _db;
-
+        //  Boolean to determine if the method should call SaveChanges()
         private readonly bool _callSaveChanges;
 
         //  Parameterless ctor required to be able to use the class as a parameter to the create method in the factory for this repository
@@ -25,23 +29,27 @@ namespace Infrastructure.Repositories
         protected Repository(){}
 
         /// <summary>
-        /// ctor: Accepts the instance of the <see cref="DbContext"/> as a parameter
+        /// ctor: Accepts the instance of the <see cref="DbContext"/> as a parameter.
+        /// Intended for use with the <see cref="Infrastructure.Data.UnitOfWork{TEntity}"/>, which
+        /// uses the <see cref="Infrastructure.Factories.RepositoryFactory{TEntity}"/> class to
+        /// instantiate the repository.
         /// </summary>
         /// <param name="context">Instance of the <see cref="DbContext"/> </param>
         protected Repository(TEntity context)
         {
             _db = context ?? throw new ArgumentNullException(nameof(context));
-            _callSaveChanges = false;
+            _callSaveChanges = false;   //  Allow Derived UnitOfWork to control calls to SaveChanges()
         }
 
         /// <summary>
-        /// ctor:
+        /// ctor: Accepts the instance of the <see cref="DbContext"/> as a parameter.
+        /// Intended for use with an IoC to bind to the derived Repository class directly.
         /// </summary>
         /// <param name="context"></param>
         protected Repository(ISession<TEntity> context)
         {
             _db = (TEntity)context ?? throw new ArgumentNullException(nameof(context));
-            _callSaveChanges = true;
+            _callSaveChanges = true;    //  Allow the derived Repository to call SaveChanges() without any intervention.
         }
 
 

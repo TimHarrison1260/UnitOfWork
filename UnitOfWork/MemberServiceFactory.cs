@@ -12,6 +12,10 @@ using Ninject;
 
 namespace UnitOfWork
 {
+    /// <summary>
+    /// Class <c>MemberServiceFactory</c> is responsible for instantiating
+    /// the MemberService in the test application
+    /// </summary>
     public class MemberServiceFactory
     {
         private readonly StandardKernel _kernel;
@@ -26,9 +30,9 @@ namespace UnitOfWork
         }
 
         /// <summary>
-        /// Create instance of SiteMonitorService
+        /// Create instance of MemberService
         /// </summary>
-        /// <returns>Instance of SiteMonitorService</returns>
+        /// <returns>Instance of MemberService</returns>
         public IMemberService Create()
         {
             //  Infrastructure;
@@ -44,10 +48,10 @@ namespace UnitOfWork
         }
 
         /// <summary>
-        /// Create instance of SiteMonitorService from IoC
+        /// Create instance of MemberService from IoC
         /// </summary>
         /// <param name="useIoc">True create from Ioc, otherwise create</param>
-        /// <returns>Instance of SiteMonitorService</returns>
+        /// <returns>Instance of MemberService</returns>
         public IMemberService Create(bool useIoc)
         {
             return !useIoc ? Create() : _kernel.Get<IMemberService>();

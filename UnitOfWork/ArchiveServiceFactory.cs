@@ -7,7 +7,6 @@ using Core.Interfaces.Services;
 using Infrastructure.Data;
 using Infrastructure.Factories;
 using Infrastructure.Interfaces.Factories;
-//using Infrastructure.Interfaces.Services;
 using Infrastructure.Services;
 using Ninject;
 using Ninject.Modules;
@@ -15,8 +14,8 @@ using Ninject.Modules;
 namespace UnitOfWork
 {
     /// <summary>
-    /// Class <c>ServiceFactory</c> is responsible for instantiating
-    /// the SiteMonitorService in the test application
+    /// Class <c>ArchiveServiceFactory</c> is responsible for instantiating
+    /// the SiteMonitorArchiveService in the test application
     /// </summary>
     public class ArchiveServiceFactory
     {
@@ -32,9 +31,9 @@ namespace UnitOfWork
         }
 
         /// <summary>
-        /// Create instance of SiteMonitorService
+        /// Create instance of SiteMonitorArchiveService
         /// </summary>
-        /// <returns>Instance of SiteMonitorService</returns>
+        /// <returns>Instance of SiteMonitorArchiveService</returns>
         public ISiteMonitorArchiveService Create()
         {
             //  Infrastructure;
@@ -56,10 +55,10 @@ namespace UnitOfWork
         }
 
         /// <summary>
-        /// Create instance of SiteMonitorService from IoC
+        /// Create instance of SiteMonitorArchiveService from IoC
         /// </summary>
         /// <param name="useIoc">True create from Ioc, otherwise create</param>
-        /// <returns>Instance of SiteMonitorService</returns>
+        /// <returns>Instance of SiteMonitorArchiveService</returns>
         public ISiteMonitorArchiveService Create(bool useIoc)
         {
             return !useIoc ? Create() : _kernel.Get<ISiteMonitorArchiveService>();

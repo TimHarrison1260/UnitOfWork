@@ -5,7 +5,6 @@ using Core.Domain.Model;
 using Core.Interfaces.Services;
 using Infrastructure.Data;
 using Infrastructure.Interfaces.Factories;
-//using Infrastructure.Interfaces.Services;
 using Infrastructure.Repositories;
 
 namespace Infrastructure.Services
@@ -42,12 +41,6 @@ namespace Infrastructure.Services
         /// <returns>Collection of scan results for archiving</returns>
         public IEnumerable<ScanResult> GetScanResults(DateTime archiveDate)
         {
-            var scansAll = _scanResultRepository.GetAll().ToList();
-
-            var scans = _scanResultRepository.Get().ToList();
-
-            var scansFiltered = _scanResultRepository.Get(filter: s => s.Scanned < archiveDate);
-
             var results = _scanResultRepository
                 .Get(f => f.Scanned < archiveDate, 
                     o => o.OrderBy(r => r.Scanned), 
